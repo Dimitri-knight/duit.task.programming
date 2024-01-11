@@ -50,3 +50,34 @@ def fibonacci(n):
 n = 20
 result = fibonacci(n)
 print(f"F({n}) = {result}")
+
+###############################################################################################
+
+#Завдання 4:
+
+def count_ways_to_climb_stairs(n):
+    if n <= 1:
+        return 1
+    else:
+        return count_ways_to_climb_stairs(n - 1) + count_ways_to_climb_stairs(n - 2)
+
+n = 15
+result = count_ways_to_climb_stairs(n)
+print(f"Кількість унікальних комбінацій для {n} сходинок: {result}")
+
+###############################################################################################
+
+#Завдання 5:
+
+def custom_pow(x, n):
+    if n == 0:
+        return 1
+    elif n > 0:
+        return x * custom_pow(x, n - 1)
+    else:
+        return 1 / custom_pow(x, -n)
+
+x = 2
+n = 8
+result = custom_pow(x, n)
+print(f"{x}^{n} = {result}")
