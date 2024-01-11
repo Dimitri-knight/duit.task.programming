@@ -1,0 +1,52 @@
+#Завдання 1:
+
+def reverse_string(string):
+  if not string:
+    return ""
+  return string[-1] + reverse_string(string[:-1])
+  
+print(reverse_string("tiger"))
+
+###############################################################################################
+
+#Завдання 2:
+
+class ListNode:
+    def __init__(self, value=0, next=None):
+        self.value = value
+        self.next = next
+
+def print_linked_list(head):
+    while head:
+        print(head.value, end=" -> ")
+        head = head.next
+    print("None")
+
+def swap_pairs(head):
+    if head is None or head.next is None:
+        return head
+    new_head = head.next
+    next_pair = head.next.next
+    head.next.next = head
+    head.next = swap_pairs(next_pair)
+    return new_head
+
+linked_list = ListNode(1, ListNode(2, ListNode(3, ListNode(4))))
+new_head = swap_pairs(linked_list)
+print_linked_list(new_head)
+
+###############################################################################################
+
+#Завдання 3:
+
+def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+n = 20
+result = fibonacci(n)
+print(f"F({n}) = {result}")
